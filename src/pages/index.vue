@@ -34,6 +34,9 @@
     </ul> -->
     <product-list :products="products" :search-item="searchItem"></product-list>
     <!-- asyncData는 pages폴더 아래에 쓸수 있으므로 이렇게 쓰고 내려준다. -->
+    <div class="cart_wrap" @click="moveToCart">
+      <button class="btn">장바구니</button>
+    </div>
   </div>
 </template>
 
@@ -117,6 +120,27 @@ export default {
         }
       })
     },
+    moveToCart() {
+      this.$router.push(`/product/cart`)
+    },
   },
 }
 </script>
+
+<style lang="scss" scoped>
+.cart_wrap {
+  position: fixed;
+  bottom: 50px;
+  right: 50px;
+  .btn {
+    display: inline-block;
+    height: 40px;
+    padding:0 10px;
+    background:#000;
+    border:0;
+    color:#fff;
+    box-shadow: none;
+    cursor:pointer;
+  }
+}
+</style>

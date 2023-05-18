@@ -6,14 +6,18 @@
       <li><img :src="product.imageUrl" :alt="product.name" /></li>
       <li>name : {{ product.name }}</li>
       <li>price : $ {{ product.price }}</li>
-      <li><button type="button" @click="addToCart">장바구니 담기</button></li>
+      <li>
+        <button type="button" @click="addToCart()">
+          장바구니 담기
+        </button>
+      </li>
     </ul>
   </div>
 </template>
 
 <script>
 // import axios from 'axios'
-import { fetchProductById } from '@/api/index'
+import { fetchProductById, createCartItem, fetchCartItems } from '@/api/index'
 
 export default {
   async asyncData({ params, $http, error }) {
@@ -53,7 +57,8 @@ export default {
     // https://nuxtjs.org/docs/internals-glossary/context/
 
     // const id = console.log(params.id);
-    try { // api호출시 에러가 났을 경우를 try catch문을 이용하여 에러 페이지로 이동 시킬 수 있다.
+    try {
+      // api호출시 에러가 났을 경우를 try catch문을 이용하여 에러 페이지로 이동 시킬 수 있다.
       const response = await fetchProductById(params.id)
       const product = response.data
       return { product }
@@ -66,11 +71,20 @@ export default {
   //     // this.$route.params.id 와 product.id가 같은 것을 확인
   //     // 다이나믹 라우팅을 위해 _변수.vue 로 파일을 만든다.
   // }
-    methods:{
-        addToCart(){
-            this.$router.push(`/cart`);
-        }
-    }
+  methods: {
+    async addToCart() {
+      const response = await fetchCartItems()
+      const matchId = response.data.find((con) => con.id === this.product.id);
+      if(matchId){
+        alert('이미 담긴 상품입니다.');
+        return;
+      }
+      await createCartItem(this.product)
+      // vuex로 넘겨주기
+      this.$store.commit('addCartItem', this.product)
+      this.$router.push(`/product/cart/`)
+    },
+  },
 }
 </script>
 

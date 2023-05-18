@@ -22,4 +22,19 @@ function fetchProductByKeyword(keword) {
   })
 }
 
-export { fetchProductById, fetchProductByKeyword }
+// 장바구니 조회 기능
+function fetchCartItems() {
+    return instance.get('/carts')
+}
+
+function createCartItem(cartItem) {
+  // 장바구니 추가 기능
+  return instance.post(`/carts/`, cartItem) // url, payload
+}
+
+export {
+  fetchProductById,
+  fetchProductByKeyword,
+  createCartItem,
+  fetchCartItems,
+}
