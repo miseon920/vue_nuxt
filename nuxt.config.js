@@ -49,3 +49,11 @@ export default {
     }
  
 }
+
+/**
+ * export default {
+  target: 'server'  //static의 경우 이부분이 static으로 설정
+}
+ target 속성의 기본 값은 server이므로 보이지 않아도 괜찮음
+ * 
+ */

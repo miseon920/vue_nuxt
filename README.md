@@ -244,6 +244,6 @@ SSR 모드로 생성한 웹 서비스는 배포하려는 서버에 Node.js 서�
     npm i vercel  
     vercel -v (버전확인)
 
-
+<https://joshua1988.github.io/vue-camp/nuxt/deployment.html>
 <https://velog.io/@jwun95/Nuxt.js-Vercel-%EB%B0%B0%ED%8F%AC>
 <https://iu-corner.tistory.com/entry/Nuxt%EB%A1%9C-Vercel%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0>
