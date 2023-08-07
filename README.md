@@ -144,7 +144,7 @@ props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이
 
 <https://jsonplaceholder.typicode.com/> 연습용 json 사이트: 파일기반의 api를 연습할 수 있음
 
-<http://localhost:3000/products> 데이터연습
+</products> 데이터연습
 
 
 4. axios를 이용하여 data 호출 - 클라이언트

@@ -22,6 +22,8 @@ function fetchProductByKeyword(keword) {
   })
 }
 
+
+
 // 장바구니 조회 기능
 function fetchCartItems() {
     return instance.get('/carts')

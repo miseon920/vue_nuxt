@@ -193,6 +193,12 @@
       "name": "Handcrafted Frozen Pizza",
       "price": "315.00",
       "imageUrl": "http://placeimg.com/640/480/fashion"
+    },
+    {
+      "id": 3,
+      "name": "Practical Metal Gloves",
+      "price": "702.00",
+      "imageUrl": "http://placeimg.com/640/480/fashion"
     }
   ]
 }

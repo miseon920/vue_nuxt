@@ -56,7 +56,8 @@ export default {
   // nuxt에서 asyncData로 호출하기 - 깜빡임이 사라짐
   async asyncData({ params, $http }) {
     // asyncData는 data보다 위쪽에 있어야 한다.
-    const response = await axios.get('http://localhost:3000/products')
+    const response = await fetchProductByKeyword(null);
+    // const response = await axios.get('http://localhost:3000/products')
     // console.log(response.data);
     // const products = response.data;
 
