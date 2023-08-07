@@ -3,7 +3,7 @@ import axios from 'axios'
 // 공통 설정을 인스턴스화 하기
 
 const instance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: process.env.baseURL,
 })
 
 function fetchProductById(id) {

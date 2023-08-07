@@ -44,10 +44,18 @@ export default {
   build: {},
   
   // server setup
-    server: {
-        port: 5000 // default: 3000
-    }
- 
+    // server: {
+    //     port: 5000 // default: 3000
+    // }
+  server: {
+    port:process.env.NODE_ENV === 'production' ? null : 5000,
+  },
+
+  // env congig
+  env: {
+    baseURL:process.env.NODE_ENV === 'production' ?
+     'https://my-json-server.typicode.com/miseon920/json-api': 'http://localhost:3000',
+  }, // api > index.js 의  baseURL을 확인 한 후 세팅한다.
 }
 
 /**
