@@ -56,10 +56,6 @@ export default {
     baseURL:process.env.NODE_ENV === 'production' ?
      'https://my-json-server.typicode.com/miseon920/json-api': 'http://localhost:3000',
   }, // api > index.js 의  baseURL을 확인 한 후 세팅한다.
-
-  generate: {
-    exclude: ['/product'],
- },
 }
 
 /**
