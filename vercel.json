@@ -5,8 +5,7 @@
         "src": "nuxt.config.js",
         "use": "@nuxtjs/vercel-builder",
         "config": {
-          "serverFiles": ["package.json"],
-          "generateStaticRoutes": true
+          "serverFiles": ["package.json"]
         }
       }
     ],
@@ -19,15 +18,5 @@
           "Service-Worker-Allowed": "/"
         }
       }
-    ],
-    "functions": {
-        "api/test.js": {
-          "memory": 3008,
-          "maxDuration": 30
-        },
-        "api/*.js": {
-          "memory": 3008,
-          "maxDuration": 30
-        }
-    }
+    ]
   }
