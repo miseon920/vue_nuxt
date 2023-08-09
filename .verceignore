@@ -1,4 +1,11 @@
 image
-!api
-!backend
+api
+backend
+README.md
+.nuxt
+node_modules
+*.log
 .git
+.vscode
+.vercel
+.vercel_cache
