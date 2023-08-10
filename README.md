@@ -55,7 +55,7 @@ beforeCreate나 created에서 브라우저 객체를 접근할 수 없습니다.
 
 # 설치
 
-npm init nuxt-app .    
+```npm init nuxt-app .    ```
 
 <pre>
 create-nuxt-app v5.0.0
@@ -77,10 +77,12 @@ create-nuxt-app v5.0.0
 ? Version control system: Git
 </pre>
 
-npm run dev
+```npm run dev```
 
 
 # 설명
+
+
 1. .nuxt : 페이지 빌드된 내용
 2. pages : 해당폴더 안에 파일을 생성하면 그 파일기반으로 라우팅이 이루어 진다.(페이지 기반 라우터 자동 생성)
 3. static : 정적인 파일을 넣어주면 된다.(파비콘이나 로봇파일)
@@ -89,16 +91,17 @@ npm run dev
 
 
 1. 디렉토리 설정
-디렉토리를 만들어서 임의로 변경할경우 (나의 경우는 src를 만든후 그안으로 옮겼다.)
+> 디렉토리를 만들어서 임의로 변경할경우 (나의 경우는 src를 만든후 그안으로 옮겼다.)
 nuxt.config.js 에서 경로를 잡아주어야한다.
 
->
+```
   dir: {
     layouts: 'src/layouts',
     pages: 'src/pages',
     store: 'src/store',
     // middleware: 'src/middleware',
   },
+```
 
 이런식으로! 신기하게 주석이 //하고 바로 쓰면안돼고 // 띄워쓰기하고 써야 된다.
 
@@ -108,7 +111,7 @@ components의 경우 그전에는 이상하게 바로 꽂으니까 나오긴했�
 *css의 경우 css란에 경로를 추가해 줄수 있지만
 나의 경우 scss이므로 sass 설치 후 경로를 지정해 주었다.
 
-    1. npm install --save-dev sass sass-loader@10 설치
+>   1. npm install --save-dev sass sass-loader@10 설치
     2. css: ```["~/assets/css/style.scss"]```,
 
 + 물결(~)표시는 절대경로를 쓰는 것인대 @로 써도 상관없다.
@@ -125,6 +128,7 @@ index.vue : 루트 페이지, 기본 인덱스
 다릅 웹사이트로 이동시에는 a 태그를 사용한다.
 
 3. 레이아웃
+
 헤더나 푸터 공통 레이아웃등이 있는 것을 만들때 
 layouts 폴더 생성 후 default.vue 로 만들면
 그것은 홈페이지의 기본 레이아웃의 된다.
@@ -140,21 +144,25 @@ layouts 폴더 안에  error.vue 를 생성 하면 에러페이지가 생성된�
 props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이지를 보여줄 수 있다.
 
 
-3. backend 파일 클론 후 해당파일 위치에서(cd backend) 노드설치(npm i)후 npm run dev ♦️이때 실행되고 있었던 노드는 꺼주어야 한다.
+4. backend 파일 클론 후 해당파일 위치에서(cd backend) 노드설치(npm i)후 npm run dev ♦️이때 실행되고 있었던 노드는 꺼주어야 한다.
 
 <https://jsonplaceholder.typicode.com/> 연습용 json 사이트: 파일기반의 api를 연습할 수 있음
 
 </products> 데이터연습
 
 
-4. axios를 이용하여 data 호출 - 클라이언트
+5. axios를 이용하여 data 호출 - 클라이언트
 
     1. npm i axios 설치 - 현재 프로젝트에서는 새로고침시 오류로 인해 axios 버전을 낮추었음(npm install axios@0.21.4)
     2. 포트변경 - 백엔드 서버가 기본 3000이라 클라이언트쪽 서버를 변경하였다
+   ```
     nuxt.config.js 에 아래 코드 추가
     server: {
         port: 5000 // default: 3000
     }
+   ```
+
+--------------------------------------------------------------------------------------------------------------
 
 +++ 콘솔창에 HMR
 HMR(Hot Module Replacement)
@@ -164,22 +172,26 @@ HMR은 브라우저를 새로 고치지 않아도 웹팩으로 빌드한 결과�
 
 5. 넉스트 rest api 호출방식 훅
 
+>
     1. asyncData : 페이지 컴포넌트(pages 폴더 아래에 위치하는 컴포넌트)에만 제공되는 속성 - 컴포넌트가 생성되기 전에 생성되므로 this를 사용할 수 없음
     - page-level component에서만 사용가능합니다.
     - this 사용이 불가능하지만 context 객체를 사용할 수 있습니다.
     - return을 통해 로컬 data에 추가가 가능합니다.
 
-    2. fetch
+>    2. fetch
     - 컴포넌트와 페이지 모두에서 사용가능합니다.
     - this 사용이 가능합니다. (서버 사이드 렌더링을 위해 서버에서 화면을 구성할 때 컴포넌트가 생성되고 나서 실행됨)
     - return을 통해 로컬 data에 추가가 불가능합니다. ( fetch 결과를 local data에 mutate 시켜줘야 함 )
     - 브라우저에서 URL 주소를 변경해서 페이지를 이동할 때 호출됨
     -  파라미터를 넣을 수 없다.(여기서 뭔소린가 했는대 js fetch가 아니고 nuxt에서 제공하는 훅 fetch에서 사용할 수 없다는😂)
 
-    😉fetch에서 제공하는 속성
-    $fetchState : 데이터 호출 상태를 나타내는 속성이며 인스턴스로 접근할 수 있다. 호출 상태에 따라 pending, error, timestamp를 제공
-    $fetch : fetch 로직을 다시 실행시킬 수 있는 함수
-    fetchOnServer : 서버 사이드 렌더링 시에 서버에서 fetch를 실행할지 말지 결정하는 속성. 기본값은 true 
+--------------------------------------------------------------------------------------------------------------------------------------
+    
+    
+😉fetch에서 제공하는 속성
+$fetchState : 데이터 호출 상태를 나타내는 속성이며 인스턴스로 접근할 수 있다. 호출 상태에 따라 pending, error, timestamp를 제공
+$fetch : fetch 로직을 다시 실행시킬 수 있는 함수
+fetchOnServer : 서버 사이드 렌더링 시에 서버에서 fetch를 실행할지 말지 결정하는 속성. 기본값은 true 
 
 <https://velog.io/@chaerin00/Nuxt-fetch-asyncData와-함께-NuxtServerInit-활용하기>
 <https://joshua1988.github.io/vue-camp/nuxt/data-fetching.html#fetch>
