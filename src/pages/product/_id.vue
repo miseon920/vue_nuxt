@@ -7,9 +7,7 @@
       <li>name : {{ product.name }}</li>
       <li>price : $ {{ product.price }}</li>
       <li>
-        <button type="button" @click="addToCart()">
-          장바구니 담기
-        </button>
+        <button type="button" @click="addToCart()">장바구니 담기</button>
       </li>
     </ul>
   </div>
@@ -71,13 +69,38 @@ export default {
   //     // this.$route.params.id 와 product.id가 같은 것을 확인
   //     // 다이나믹 라우팅을 위해 _변수.vue 로 파일을 만든다.
   // }
+  //  head: {
+  //     title: '쇼핑 상세페이지',
+  //     meta: [
+  //       {
+  //         hid: 'description', // 기존 헤드에 있던 값과 같을 경우 뒤집어 씌움
+  //         name: 'description',
+  //         content: '넉스트 쇼핑 예시'
+  //       },
+  //     ],
+  //   },
+
+  // 헤드 데이타에 뷰 데이타를 연결 시킬 때 해드 객체를 헤드 함수로 변경한다.
+  head() {
+    return {
+      title:`쇼핑 상세페이지 - ${this.product.name}`,
+      meta: [
+        {
+          hid: 'description', // 기존 헤드에 있던 값과 같을 경우 뒤집어 씌움
+          name: 'description',
+          content: '넉스트 쇼핑 예시',
+        },
+      ],
+    }
+  },
+
   methods: {
     async addToCart() {
       const response = await fetchCartItems()
-      const matchId = response.data.find((con) => con.id === this.product.id);
-      if(matchId){
-        alert('이미 담긴 상품입니다.');
-        return;
+      const matchId = response.data.find((con) => con.id === this.product.id)
+      if (matchId) {
+        alert('이미 담긴 상품입니다.')
+        return
       }
       await createCartItem(this.product)
       // vuex로 넘겨주기
