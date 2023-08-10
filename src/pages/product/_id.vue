@@ -90,6 +90,21 @@ export default {
           name: 'description',
           content: '넉스트 쇼핑 예시',
         },
+        { // og 
+            hid: 'og:title',
+            property: 'og:title',
+            content: '상품 상세 페이지'
+        },
+        {
+            hid: 'og:description',
+            property: 'og:description',
+            content: '상품의 상세 정보를 확인해보세요'
+        },
+        {
+            hid: 'og:image',
+            property: 'og:image',
+            content: 'https://via.placeholder.com/150/771796'
+        },
       ],
     }
   },
