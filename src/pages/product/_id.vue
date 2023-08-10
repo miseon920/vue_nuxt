@@ -58,7 +58,7 @@ export default {
     try {
       // api호출시 에러가 났을 경우를 try catch문을 이용하여 에러 페이지로 이동 시킬 수 있다.
       const response = await fetchProductById(params.id)
-      const product = response.data
+      const product = response.data;
       return { product }
     } catch (e) {
       error({ statusCode: 503, message: 'api 요청에 실패했습니다.' })

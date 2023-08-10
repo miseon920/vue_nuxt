@@ -41,7 +41,7 @@
 </template>
 
 <script>
-import axios from 'axios'
+// import axios from 'axios'
 import SerchInput from '~/src/components/SerchInput.vue'
 import { fetchProductByKeyword } from '@/api/index'
 // 물결(~)표시는 웹팩 resolve 옵션 속성 - nuxt에서는 ~ 이나 @로 사용할 수 있게 설정되어 있음

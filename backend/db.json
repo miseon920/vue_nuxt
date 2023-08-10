@@ -182,23 +182,5 @@
     }
   ],
   "carts": [
-    {
-      "id": 1,
-      "name": "Refined Fresh Chicken",
-      "price": "209.00",
-      "imageUrl": "https://via.placeholder.com/150/771796"
-    },
-    {
-      "id": 2,
-      "name": "Handcrafted Frozen Pizza",
-      "price": "315.00",
-      "imageUrl": "https://via.placeholder.com/150/771796"
-    },
-    {
-      "id": 3,
-      "name": "Practical Metal Gloves",
-      "price": "702.00",
-      "imageUrl": "https://via.placeholder.com/150/771796"
-    }
   ]
 }
