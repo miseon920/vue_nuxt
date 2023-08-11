@@ -55,9 +55,10 @@ Nuxt.js	VueRouter
 <https://mine-it-record.tistory.com/662>
 <https://nuxtjs.org/>
 
-# 설치
+## 설치
 
-> 
+<pre>
+  
   npm init nuxt-app .    
   
   
@@ -80,12 +81,13 @@ Nuxt.js	VueRouter
   ? Version control system: Git
 
 
-npm run dev
+  npm run dev
+</pre>
 
 -----------------------------------------------------------------------------------------------
 
 
-# 설명
+## 설명
 
 1. .nuxt : 페이지 빌드된 내용
 2. pages : 해당폴더 안에 파일을 생성하면 그 파일기반으로 라우팅이 이루어 진다.(페이지 기반 라우터 자동 생성)
