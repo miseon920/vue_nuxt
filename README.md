@@ -57,25 +57,25 @@ beforeCreate나 created에서 브라우저 객체를 접근할 수 없습니다.
 
 ```npm init nuxt-app .```
 
-<pre>
-    create-nuxt-app v5.0.0
-    ✨  Generating Nuxt.js project in .
-    ? Project name: vue_nuxt
-    ? Programming language: JavaScript
-    ? Package manager: Npm
-    ? UI framework: (Use arrow keys)
-    > None
-    ? UI framework: None
-    ? Template engine: HTML
-    ? Nuxt.js modules: (Press <space> to select, <a> to toggle all, <i> to invert selection)
-    ? Linting tools: ESLint, Prettier
-    ? Testing framework: None
-    ? Rendering mode: Universal (SSR / SSG)
-    ? Deployment target: Server (Node.js hosting)
-    ? Development tools: (Press <space> to select, <a> to toggle all, <i> to invert selection)
-    ? Continuous integration: None
-    ? Version control system: Git
-</pre>
+```
+create-nuxt-app v5.0.0
+✨  Generating Nuxt.js project in .
+? Project name: vue_nuxt
+? Programming language: JavaScript
+? Package manager: Npm
+? UI framework: (Use arrow keys)
+> None
+? UI framework: None
+? Template engine: HTML
+? Nuxt.js modules: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Linting tools: ESLint, Prettier
+? Testing framework: None
+? Rendering mode: Universal (SSR / SSG)
+? Deployment target: Server (Node.js hosting)
+? Development tools: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+? Continuous integration: None
+? Version control system: Git
+```
 
 ```npm run dev```
 
