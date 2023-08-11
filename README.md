@@ -275,6 +275,7 @@ connect ECONNREFUSED 127.0.0.1:3000 에러가 난다.
     예) <https://my-json-server.typicode.com/miseon920/json-api>
 
 😉현업에서는 Swagger ui 많이 사용
+
 <https://appmaster.io/university/ko/tutorials/endpoints/swagger-ran-mueosimyeo-sayong-bangbeob>
 
 
@@ -409,6 +410,7 @@ Server-Side-Rendering : 요청이 올 때 마다 해당하는 HTML 문서를 그
 - 제품의 상세 페이지 / 분석 차트 등 요청 마다 다른 내용 또는 형식의 HTML 문서가 반환되는 경우
 
 참고 👀
+
 <https://velog.io/@longroadhome/FE-SSRServer-Side-Rendering-%EA%B7%B8%EB%A6%AC%EA%B3%A0-SSGStatic-Site-Generation-feat.-NEXT%EB%A5%BC-%EC%A4%91%EC%8B%AC%EC%9C%BC%EB%A1%9C>
 
 
@@ -431,5 +433,7 @@ nuxt.config.js 에서 head 속성을 설정해 주어야 한다.
 이럴때 디버깅 도구를 통해서 캐시를 삭제 할 수 있다.
 
 # 카카오와 페이스북에서 제공하는 디버깅 도구
+
 <https://developers.kakao.com/tool/debugger/sharing>
+
 <https://developers.facebook.com/tools/debug/>
