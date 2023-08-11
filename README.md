@@ -78,29 +78,32 @@ beforeCreate나 created에서 브라우저 객체를 접근할 수 없습니다.
 </pre>
 
 ```npm run dev```
+
 --------------------------------------------------------------------------------------------------
+
 
 # 설명
 
-1. .nuxt : 페이지 빌드된 내용
-2. pages : 해당폴더 안에 파일을 생성하면 그 파일기반으로 라우팅이 이루어 진다.(페이지 기반 라우터 자동 생성)
-3. static : 정적인 파일을 넣어주면 된다.(파비콘이나 로봇파일)
-4. store : 스토어작성을 하면 된다.
+    1. .nuxt : 페이지 빌드된 내용
+    2. pages : 해당폴더 안에 파일을 생성하면 그 파일기반으로 라우팅이 이루어 진다.(페이지 기반 라우터 자동 생성)
+    3. static : 정적인 파일을 넣어주면 된다.(파비콘이나 로봇파일)
+    4. store : 스토어작성을 하면 된다.
 
 
 
 1. 디렉토리 설정
+
 디렉토리를 만들어서 임의로 변경할경우 (나의 경우는 src를 만든후 그안으로 옮겼다.)
 nuxt.config.js 에서 경로를 잡아주어야한다.
 
-<pre>
-    dir: {
-        layouts: 'src/layouts',
-        pages: 'src/pages',
-        store: 'src/store',
-        // middleware: 'src/middleware',
-    },
-</pre>
+    <pre>
+        dir: {
+            layouts: 'src/layouts',
+            pages: 'src/pages',
+            store: 'src/store',
+            // middleware: 'src/middleware',
+        },
+    </pre>
 
 
 이런식으로! 신기하게 주석이 //하고 바로 쓰면안돼고 // 띄워쓰기하고 써야 된다.
@@ -122,32 +125,33 @@ components의 경우 그전에는 이상하게 바로 꽂으니까 나오긴했�
 
 2. pages안에 페이지 생성하기
 
-파일 생성 후 자동으로 라우팅되며 빌드 된다.(.nuxt/router.js에 routes부분에 자동으로 추가 및 삭제 등이 되어있는것을 확인 할 수 있다.)
-index.vue : 루트 페이지, 기본 인덱스
-앱의 페이지 사이를 이동하려면 NuxtLink 를 사용한다. ```<NuxtLink to="/about">```
-다릅 웹사이트로 이동시에는 a 태그를 사용한다.
+    파일 생성 후 자동으로 라우팅되며 빌드 된다.(.nuxt/router.js에 routes부분에 자동으로 추가 및 삭제 등이 되어있는것을 확인 할 수 있다.)
+    index.vue : 루트 페이지, 기본 인덱스
+    앱의 페이지 사이를 이동하려면 NuxtLink 를 사용한다. ```<NuxtLink to="/about">```
+    다릅 웹사이트로 이동시에는 a 태그를 사용한다.
 
 3. 레이아웃
-헤더나 푸터 공통 레이아웃등이 있는 것을 만들때 
-layouts 폴더 생성 후 default.vue 로 만들면
-그것은 홈페이지의 기본 레이아웃의 된다.
-만약 다른 레이아웃을 사용할 경우라면 따로 만들고
-필요한 페이지에 
 
-layout: '만든레이아웃이름',
+    헤더나 푸터 공통 레이아웃등이 있는 것을 만들때 
+    layouts 폴더 생성 후 default.vue 로 만들면
+    그것은 홈페이지의 기본 레이아웃의 된다.
+    만약 다른 레이아웃을 사용할 경우라면 따로 만들고
+    필요한 페이지에 
 
-으로 추가해주면 된다.(기본 레이아웃을 쓸경우에는 기입하지 않아도 된다.)
+    layout: '만든레이아웃이름',
 
-+ 에러페이지 
-layouts 폴더 안에  error.vue 를 생성 하면 에러페이지가 생성된다.
-props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이지를 보여줄 수 있다.
+    으로 추가해주면 된다.(기본 레이아웃을 쓸경우에는 기입하지 않아도 된다.)
+
+    + 에러페이지 
+    layouts 폴더 안에  error.vue 를 생성 하면 에러페이지가 생성된다.
+    props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이지를 보여줄 수 있다.
 
 
 3. backend 파일 클론 후 해당파일 위치에서(cd backend) 노드설치(npm i)후 npm run dev ♦️이때 실행되고 있었던 노드는 꺼주어야 한다.
 
-<https://jsonplaceholder.typicode.com/> 연습용 json 사이트: 파일기반의 api를 연습할 수 있음
+    <https://jsonplaceholder.typicode.com/> 연습용 json 사이트: 파일기반의 api를 연습할 수 있음
 
-```</products>``` 데이터연습
+    ```</products>``` 데이터연습
 
 
 4. axios를 이용하여 data 호출 - 클라이언트
@@ -160,10 +164,10 @@ props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이
             port: 5000 // default: 3000
         }
 
-+++ 콘솔창에 HMR
-HMR(Hot Module Replacement)
-HMR은 브라우저를 새로 고치지 않아도 웹팩으로 빌드한 결과물이 웹 애플리케이션에 실시간으로 반영될 수 있게 도와주는 설정
-브라우저 새로 고침을 위한 LiveReload 대신에 사용할 수 있으며 웹팩 데브 서버와 함께 사용할 수도 있다.
+    +++ 콘솔창에 HMR
+    HMR(Hot Module Replacement)
+    HMR은 브라우저를 새로 고치지 않아도 웹팩으로 빌드한 결과물이 웹 애플리케이션에 실시간으로 반영될 수 있게 도와주는 설정
+    브라우저 새로 고침을 위한 LiveReload 대신에 사용할 수 있으며 웹팩 데브 서버와 함께 사용할 수도 있다.
 
 
 5. 넉스트 rest api 호출방식 훅
@@ -185,9 +189,9 @@ HMR은 브라우저를 새로 고치지 않아도 웹팩으로 빌드한 결과�
     $fetch : fetch 로직을 다시 실행시킬 수 있는 함수
     fetchOnServer : 서버 사이드 렌더링 시에 서버에서 fetch를 실행할지 말지 결정하는 속성. 기본값은 true 
 
-<https://velog.io/@chaerin00/Nuxt-fetch-asyncData와-함께-NuxtServerInit-활용하기>
-<https://joshua1988.github.io/vue-camp/nuxt/data-fetching.html#fetch>
-<https://nuxtjs.org/docs/features/data-fetching/>
+    <https://velog.io/@chaerin00/Nuxt-fetch-asyncData와-함께-NuxtServerInit-활용하기>
+    <https://joshua1988.github.io/vue-camp/nuxt/data-fetching.html#fetch>
+    <https://nuxtjs.org/docs/features/data-fetching/>
 
 
 6. api 모듈화 시키기 
@@ -218,15 +222,15 @@ HMR은 브라우저를 새로 고치지 않아도 웹팩으로 빌드한 결과�
 
 13. nuxtServerInit(storeContext,nuxtContext)
 
-Nuxt 공식문서에 따르면 nuxtServerInit이 action에 정의되어있고, nuxt universal모드일 경우 Nuxt는 context객체와 함께 server-side에서 nuxtServerInit 훅을 호출
-client-side에 바로 전달해야하는 server에 있는 data가 있을 때 사용하면 유용하다고 하는데, client에서 화면이 그려지기전 server-side에서 처리해야하는 로직들을 nuxtServerInit에 정의할 수 있다.
+    Nuxt 공식문서에 따르면 nuxtServerInit이 action에 정의되어있고, nuxt universal모드일 경우 Nuxt는 context객체와 함께 server-side에서 nuxtServerInit 훅을 호출
+    client-side에 바로 전달해야하는 server에 있는 data가 있을 때 사용하면 유용하다고 하는데, client에서 화면이 그려지기전 server-side에서 처리해야하는 로직들을 nuxtServerInit에 정의할 수 있다.
 
-ssr을 위해서 사용하는대 asyncData를 하기 전에 호출하며 서버 store에 데이터를 미리 설정 해 준다.
-서버에서만 접근할 수 있는 데이터를 다룰때 유용하다.
-store의 actions에 정의 하면 된다.
+    ssr을 위해서 사용하는대 asyncData를 하기 전에 호출하며 서버 store에 데이터를 미리 설정 해 준다.
+    서버에서만 접근할 수 있는 데이터를 다룰때 유용하다.
+    store의 actions에 정의 하면 된다.
 
-- storeContext 는 commit, state, dispatch 등이 있다.
-- nuxtContext 는 app,store,route,params 등  asyncData메서드의 context 파라미터와 같다.
+    - storeContext 는 commit, state, dispatch 등이 있다.
+    - nuxtContext 는 app,store,route,params 등  asyncData메서드의 context 파라미터와 같다.
 
 14. 배포하기
 SSR 모드로 생성한 웹 서비스는 배포하려는 서버에 Node.js 서버를 실행할 수 있는 형태로 배포해야 한다.
@@ -251,6 +255,6 @@ SSR 모드로 생성한 웹 서비스는 배포하려는 서버에 Node.js 서�
     npm i vercel  
     vercel -v (버전확인)
 
-<https://joshua1988.github.io/vue-camp/nuxt/deployment.html>
-<https://velog.io/@jwun95/Nuxt.js-Vercel-%EB%B0%B0%ED%8F%AC>
-<https://iu-corner.tistory.com/entry/Nuxt%EB%A1%9C-Vercel%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0>
+    <https://joshua1988.github.io/vue-camp/nuxt/deployment.html>
+    <https://velog.io/@jwun95/Nuxt.js-Vercel-%EB%B0%B0%ED%8F%AC>
+    <https://iu-corner.tistory.com/entry/Nuxt%EB%A1%9C-Vercel%EC%97%90-%EB%B0%B0%ED%8F%AC%ED%95%98%EA%B8%B0>
