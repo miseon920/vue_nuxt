@@ -46,7 +46,7 @@ beforeCreate나 created에서 브라우저 객체를 접근할 수 없습니다.
 - 이처럼 넉스트는 라우터 설정 파일을 일일이 생성 및 설정하지 않아도 되어 편리합니다.
 
 
-```<router-view>, <Nuxt>``` 모두 뷰 컴포넌트입니다. 따라서 <RouterView>와 <router-view>와 같습니다. <Nuxt>도 그럼 동일한 케밥 네이밍으로 변환하면 <nuxt>로도 쓸 수 있겠죠? 😃
+```<router-view>, <Nuxt>``` 모두 뷰 컴포넌트입니다. 따라서 ```<RouterView>```와 ```<router-view>```와 같습니다. ```<Nuxt>```도 그럼 동일한 케밥 네이밍으로 변환하면 ```<nuxt>```로도 쓸 수 있겠죠? 😃
 
 <https://joshua1988.github.io/vue-camp/nuxt/intro.html#nuxt%E1%84%8B%E1%85%B4-%E1%84%8C%E1%85%A1%E1%86%BC%E1%84%8C%E1%85%A5%E1%86%B7>
 <https://mine-it-record.tistory.com/662>
@@ -55,29 +55,29 @@ beforeCreate나 created에서 브라우저 객체를 접근할 수 없습니다.
 
 # 설치
 
-npm init nuxt-app .    
+```npm init nuxt-app .```
 
 <pre>
-create-nuxt-app v5.0.0
-✨  Generating Nuxt.js project in .
-? Project name: vue_nuxt
-? Programming language: JavaScript
-? Package manager: Npm
-? UI framework: (Use arrow keys)
-> None
-? UI framework: None
-? Template engine: HTML
-? Nuxt.js modules: (Press <space> to select, <a> to toggle all, <i> to invert selection)
-? Linting tools: ESLint, Prettier
-? Testing framework: None
-? Rendering mode: Universal (SSR / SSG)
-? Deployment target: Server (Node.js hosting)
-? Development tools: (Press <space> to select, <a> to toggle all, <i> to invert selection)
-? Continuous integration: None
-? Version control system: Git
+    create-nuxt-app v5.0.0
+    ✨  Generating Nuxt.js project in .
+    ? Project name: vue_nuxt
+    ? Programming language: JavaScript
+    ? Package manager: Npm
+    ? UI framework: (Use arrow keys)
+    > None
+    ? UI framework: None
+    ? Template engine: HTML
+    ? Nuxt.js modules: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+    ? Linting tools: ESLint, Prettier
+    ? Testing framework: None
+    ? Rendering mode: Universal (SSR / SSG)
+    ? Deployment target: Server (Node.js hosting)
+    ? Development tools: (Press <space> to select, <a> to toggle all, <i> to invert selection)
+    ? Continuous integration: None
+    ? Version control system: Git
 </pre>
 
-npm run dev
+```npm run dev```
 
 
 # 설명
@@ -92,13 +92,15 @@ npm run dev
 디렉토리를 만들어서 임의로 변경할경우 (나의 경우는 src를 만든후 그안으로 옮겼다.)
 nuxt.config.js 에서 경로를 잡아주어야한다.
 
->
-  dir: {
-    layouts: 'src/layouts',
-    pages: 'src/pages',
-    store: 'src/store',
-    // middleware: 'src/middleware',
-  },
+<pre>
+    dir: {
+        layouts: 'src/layouts',
+        pages: 'src/pages',
+        store: 'src/store',
+        // middleware: 'src/middleware',
+    },
+</pre>
+
 
 이런식으로! 신기하게 주석이 //하고 바로 쓰면안돼고 // 띄워쓰기하고 써야 된다.
 
@@ -144,7 +146,7 @@ props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이
 
 <https://jsonplaceholder.typicode.com/> 연습용 json 사이트: 파일기반의 api를 연습할 수 있음
 
-</products> 데이터연습
+```</products>``` 데이터연습
 
 
 4. axios를 이용하여 data 호출 - 클라이언트
@@ -152,9 +154,10 @@ props로 error를 받아와서 사용하면 상황에 따라 다른 error 페이
     1. npm i axios 설치 - 현재 프로젝트에서는 새로고침시 오류로 인해 axios 버전을 낮추었음(npm install axios@0.21.4)
     2. 포트변경 - 백엔드 서버가 기본 3000이라 클라이언트쪽 서버를 변경하였다
     nuxt.config.js 에 아래 코드 추가
-    server: {
-        port: 5000 // default: 3000
-    }
+    >
+        server: {
+            port: 5000 // default: 3000
+        }
 
 +++ 콘솔창에 HMR
 HMR(Hot Module Replacement)
@@ -228,17 +231,20 @@ store의 actions에 정의 하면 된다.
 SSR 모드로 생성한 웹 서비스는 배포하려는 서버에 Node.js 서버를 실행할 수 있는 형태로 배포해야 한다.
 
 1. SSR (Server Side Rendering)
-
-    // nuxt.config.js
-    export default {
-    target: 'server'
-    }
+    
+    >
+        // nuxt.config.js
+        export default {
+        target: 'server'
+        }
 
     2. SSG (Static Site Generation - API없이 사이트를 제작했을 때)
-    // nuxt.config.js
-    export default {
-    target: 'static'
-    }
+    
+    >
+        // nuxt.config.js
+        export default {
+        target: 'static'
+        }
 
     ♦️버셀로 배포하기
     npm i vercel  
