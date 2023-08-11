@@ -315,7 +315,14 @@ connect ECONNREFUSED 127.0.0.1:3000 에러가 난다.
 
 3. ssr  배포시 주의사항
 
-    * 버셀 이슈 - (Error: The Serverless Function "index" is 93.44mb which exceeds the maximum size limit of 50mb. Learn More: <https://vercel.link/serverless-function-size>) = 용량  때문에 안됌..ㅠㅠ - dist만 올라가야하는대 전부 다 올라가서 생기는 문제로 파악됨
+    * 버셀 이슈 
+    ```
+    (Error: The Serverless Function "index" is 93.44mb which exceeds the maximum size limit of 50mb. Learn More: <https://vercel.link/serverless-function-size>)
+    
+    - 용량  때문에 안됌..ㅠㅠ - dist만 올라가야하는대 전부 다 올라가서 생기는 문제로 파악됨
+
+    ```
+
 
     ```
     // vercel.json 
