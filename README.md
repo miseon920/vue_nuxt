@@ -96,14 +96,14 @@ create-nuxt-app v5.0.0
 디렉토리를 만들어서 임의로 변경할경우 (나의 경우는 src를 만든후 그안으로 옮겼다.)
 nuxt.config.js 에서 경로를 잡아주어야한다.
 
-    <pre>
-        dir: {
-            layouts: 'src/layouts',
-            pages: 'src/pages',
-            store: 'src/store',
-            // middleware: 'src/middleware',
-        },
-    </pre>
+
+    dir: {
+        layouts: 'src/layouts',
+        pages: 'src/pages',
+        store: 'src/store',
+        // middleware: 'src/middleware',
+    },
+
 
 
 이런식으로! 신기하게 주석이 //하고 바로 쓰면안돼고 // 띄워쓰기하고 써야 된다.
